@@ -4,5 +4,5 @@ An automagical script to install Docker on Ubuntu 16.04 LTS (with custom fix for
 ### Usage
 Run the command:
 ```shell
-$ curl https://github.com/tehKapa/docker-infrastructure/blob/master/install.sh | bash
+$ curl https://raw.githubusercontent.com/tehKapa/docker-infrastructure/master/install.sh | bash
 ```
