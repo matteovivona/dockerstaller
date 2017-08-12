@@ -21,5 +21,5 @@ add-apt-repository \
    stable edge"
 
 apt-get update
-apt-get install docker-ce -y
+apt-get install -y docker-ce
 docker version
