@@ -37,8 +37,8 @@ ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2376 --storage-driver aufs 
 Environment=
 EOT
 
-sudo systemctl daemon-reload
+sudo systemctl daemon-reload 
 
-sudo service docker restart
+sudo service docker restart # Restart Docker Deamon
 
-sudo service docker status
+sudo service docker status # Check Docker Deamon
