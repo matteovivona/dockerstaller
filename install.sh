@@ -30,10 +30,12 @@ sudo mkdir /etc/systemd/system/docker.service.d/ # Fix docker-engine start fail
 
 sudo touch /etc/systemd/system/docker.service.d/hosts.conf
 
-sudo echo -e "[Service]\n
-ExecStart=\n
-ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2376 --storage-driver aufs --tlsverify --tlscacert /etc/docker/ca.pem --tlscert /etc/docker/server.pem --tlskey /etc/docker/server-key.pem --label provider=generic\n 
-Environment=" >> hosts.conf
+sudo cat <<EOT >> hosts.conf
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2376 --storage-driver aufs --tlsverify --tlscacert /etc/docker/ca.pem --tlscert /etc/docker/server.pem --tlskey /etc/docker/server-key.pem --label provider=generic
+Environment=
+EOT
 
 sudo systemctl daemon-reload
 
