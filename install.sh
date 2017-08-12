@@ -1,13 +1,13 @@
 #!/bin/bash
 apt-get update
 
-apt-get install \
+apt-get install -y \
     linux-image-extra-$(uname -r) \
     linux-image-extra-virtual
 
 apt-get update
 
-apt-get install \
+apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -21,5 +21,5 @@ add-apt-repository \
    stable edge"
 
 apt-get update
-apt-get install docker-ce
+apt-get install docker-ce -y
 docker version
