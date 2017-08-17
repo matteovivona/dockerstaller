@@ -8,9 +8,12 @@ Open a terminal and SSH into the VM where you want to run Docker.
 ```shell
 $ curl https://raw.githubusercontent.com/tehKapa/dockerstaller/master/install.sh | bash
 ```
-2. Create a [machine](https://docs.docker.com/machine/reference/create/). 
+
+2. Create a [machine](https://docs.docker.com/machine/reference/create/). <br/>
+
 3 . Fix hosts.conf:
 ```shell
 $ curl https://raw.githubusercontent.com/tehKapa/dockerstaller/master/fix.sh | bash
 ```
+
 4. Have fun!
