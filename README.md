@@ -10,7 +10,6 @@ $ curl https://raw.githubusercontent.com/tehKapa/dockerstaller/master/install.sh
 ```
 
 2. Create a [machine](https://docs.docker.com/machine/reference/create/). 
-
 3 . Fix hosts.conf:
 ```shell
 $ curl https://raw.githubusercontent.com/tehKapa/dockerstaller/master/fix.sh | bash
