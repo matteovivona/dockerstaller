@@ -31,15 +31,3 @@ sudo docker version # Check Docker version
 sudo apt-get update # To get the latest package lists
 
 sudo apt-get upgrade
-
-sudo mkdir /etc/systemd/system/docker.service.d/ # Fix docker-engine start fail
-
-sudo wget -O /etc/systemd/system/docker.service.d/hosts.conf "https://raw.githubusercontent.com/tehKapa/docker-infrastructure/master/hosts.conf" 
-
-sudo chmod +x /etc/systemd/system/docker.service.d/hosts.conf
-
-sudo systemctl daemon-reload 
-
-sudo service docker restart # Restart Docker Deamon
-
-sudo service docker status # Check Docker Deamon
