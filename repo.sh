@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt-get update # To get the latest package lists
 
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 
 sudo apt-get install -y \
     linux-image-extra-$(uname -r) \
