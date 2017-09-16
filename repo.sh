@@ -9,7 +9,7 @@ sudo apt-get install -y \
 
 sudo apt-get update # To update package lists
 
-sudo apt-get autoclean
+sudo apt-get autoclean -y
 
 sudo apt-get install -y \
     apt-transport-https \
