@@ -21,4 +21,4 @@ curl https://raw.githubusercontent.com/tehKapa/dockerstaller/master/install.sh |
 curl https://raw.githubusercontent.com/tehKapa/dockerstaller/master/fix.sh | bash
 ```
 
-5. Have fun!
+5. Have fun and remember `systemctl enable docker`
