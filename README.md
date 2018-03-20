@@ -1,4 +1,4 @@
-# Dockerstaller
+# Dockerstaller [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/tehKapa/k8staller/issues) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 An automagical script to install Docker on Ubuntu 16.04 LTS (with custom fix for docker-machine tool).
 
 ### Usage

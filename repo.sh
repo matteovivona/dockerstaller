@@ -1,5 +1,4 @@
 #!/bin/bash
-<<<<<<< HEAD
 sudo apt-get update # To get the latest package lists
 
 sudo apt-get upgrade -y
@@ -7,8 +6,10 @@ sudo apt-get upgrade -y
 sudo apt-get install -y \
     linux-image-extra-$(uname -r) \
     linux-image-extra-virtual
-
+    
 sudo apt-get autoclean -y
+
+sudo apt-get update # To update package lists
 
 sudo apt-get install -y \
     apt-transport-https \
@@ -23,10 +24,4 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable edge"
 
-sudo apt-get update # To get the latest package lists
-
-=======
->>>>>>> origin/master
-sudo apt-get install -y docker-ce # Install Docker CE Stable
-
-sudo docker version # Check Docker version
+sudo apt-get update # To update package lists
