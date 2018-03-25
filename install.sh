@@ -1,5 +1,4 @@
 #!/bin/bash
-<<<<<<< HEAD
 sudo apt-get update # To get the latest package lists
 
 sudo apt-get upgrade -y
@@ -25,8 +24,6 @@ sudo add-apt-repository \
 
 sudo apt-get update # To get the latest package lists
 
-=======
->>>>>>> origin/master
 sudo apt-get install -y docker-ce # Install Docker CE Stable
 
 sudo docker version # Check Docker version
