@@ -9,7 +9,7 @@ Open a terminal and SSH into the VM where you want to run Docker.
 curl https://raw.githubusercontent.com/tehKapa/dockerstaller/master/install.sh | bash
 ```
 
-### Bonus - deprecated
+### Bonus 
 
 Custom fix for Docker Machine 0.12.2 (2017-7-12)
 
