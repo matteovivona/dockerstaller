@@ -8,6 +8,8 @@ Open a terminal and SSH into the VM where you want to run Docker.
 ```shell
 curl https://raw.githubusercontent.com/tehKapa/dockerstaller/master/install.sh | bash
 ```
+2. Welcome aboard!
+
 
 ### Bonus 
 
