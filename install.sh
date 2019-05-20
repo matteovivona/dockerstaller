@@ -3,16 +3,13 @@ sudo apt-get update # To get the latest package lists
 
 sudo apt-get upgrade -y
 
-sudo apt-get install -y \
-    linux-image-extra-$(uname -r) \
-    linux-image-extra-virtual
-
 sudo apt-get autoclean -y
 
-sudo apt-get install -y \
+sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
+    gnupg-agent \
     software-properties-common
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -20,7 +17,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
-   stable edge"
+   stable"
 
 sudo apt-get update # To get the latest package lists
 
@@ -28,8 +25,12 @@ sudo apt-get autoclean -y
 
 sudo apt-get autoremove -y
 
-sudo apt-get install -y docker-ce # Install Docker CE Stable
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y # Install Docker CE Stable
 
 sudo docker version # Check Docker version
 
-systemctl enable docker
+sudo groupadd docker # Manage Docker as a non-root user
+
+sudo usermod -aG docker $USER 
+
+sudo systemctl enable docker
