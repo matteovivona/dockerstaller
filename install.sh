@@ -1,9 +1,14 @@
 #!/bin/bash
+
+echo \"Welcome to Dockerstaller!\"
+
 sudo apt-get update # To get the latest package lists
 
 sudo apt-get upgrade -y
 
 sudo apt-get autoclean -y
+
+echo \"I have updated your system\"
 
 sudo apt-get install \
     apt-transport-https \
@@ -25,12 +30,16 @@ sudo apt-get autoclean -y
 
 sudo apt-get autoremove -y
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io -y # Install Docker CE Stable
+echo \"Now, I install Docker\"
 
-sudo docker version # Check Docker version
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y # Install Docker CE Stable
 
 sudo groupadd docker # Manage Docker as a non-root user
 
 sudo usermod -aG docker $USER 
 
 sudo systemctl enable docker
+
+sudo docker version # Check Docker version
+
+echo \"Tada! All fine. Welcome aboard, captain.\"
