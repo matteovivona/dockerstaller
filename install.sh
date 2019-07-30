@@ -16,7 +16,16 @@ sudo apt-get upgrade -y
 
 sudo apt-get autoclean -y
 
-echo \"I have updated your system\"
+
+cat << "EOF"
+
+###################################################
+
+I have updated your system
+
+###################################################
+
+EOF
 
 sudo apt-get install \
     apt-transport-https \
@@ -50,4 +59,12 @@ sudo systemctl enable docker
 
 sudo docker version # Check Docker version
 
-echo \"Tada! All fine. Welcome aboard, captain.\"
+cat << "EOF"
+
+###################################################
+
+Tada! All fine. Welcome aboard, captain.
+
+###################################################
+
+EOF
