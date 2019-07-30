@@ -16,7 +16,6 @@ sudo apt-get upgrade -y
 
 sudo apt-get autoclean -y
 
-
 cat << "EOF"
 
 ###################################################
@@ -47,7 +46,15 @@ sudo apt-get autoclean -y
 
 sudo apt-get autoremove -y
 
-echo \"Now, I install Docker\"
+cat << "EOF"
+
+###################################################
+
+Now, I install Docker
+
+###################################################
+
+EOF
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y # Install Docker CE Stable
 
