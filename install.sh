@@ -10,11 +10,9 @@ cat << "EOF"
                                                                 
 EOF
 
-sudo apt-get update # To get the latest package lists
+sudo apt-get update && sudo apt-get upgrade -y
 
-sudo apt-get upgrade -y
-
-sudo apt-get autoclean -y
+sudo apt-get autoclean -y && sudo apt-get autoremove -y
 
 cat << "EOF"
 
@@ -40,11 +38,7 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 
-sudo apt-get update # To get the latest package lists
-
-sudo apt-get autoclean -y
-
-sudo apt-get autoremove -y
+sudo apt-get update
 
 cat << "EOF"
 
