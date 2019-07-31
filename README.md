@@ -13,7 +13,7 @@ curl https://raw.githubusercontent.com/tehKapa/dockerstaller/master/install.sh |
 ### OS requirements
 To install Docker CE, you need the 64-bit version of one of these Ubuntu versions:
 
-Cosmic 18.10
-Bionic 18.04 (LTS)
-Xenial 16.04 (LTS)
+* Cosmic 18.10
+* Bionic 18.04 (LTS)
+* Xenial 16.04 (LTS)
 
