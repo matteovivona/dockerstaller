@@ -12,10 +12,6 @@ EOF
 
 sudo apt-get update && sudo apt-get upgrade -y
 
-sudo apt install thin-provisioning-tools lvm2
-
-sudo apt-get autoclean -y && sudo apt-get autoremove -y
-
 cat << "EOF"
 
 ###################################################
@@ -31,7 +27,9 @@ sudo apt-get install \
     ca-certificates \
     curl \
     gnupg-agent \
-    software-properties-common
+    software-properties-common \
+    thin-provisioning-tools \
+    lvm2
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
