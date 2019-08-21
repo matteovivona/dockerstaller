@@ -12,6 +12,8 @@ EOF
 
 sudo apt-get update && sudo apt-get upgrade -y
 
+sudo apt install thin-provisioning-tools lvm2
+
 sudo apt-get autoclean -y && sudo apt-get autoremove -y
 
 cat << "EOF"
