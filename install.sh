@@ -15,9 +15,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 cat << "EOF"
 
 ###################################################
-
 I have updated your system
-
 ###################################################
 
 EOF
@@ -30,6 +28,10 @@ sudo apt-get install \
     software-properties-common \
     thin-provisioning-tools \
     lvm2
+    
+###################################################
+Adding the new repository
+###################################################    
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
@@ -43,9 +45,7 @@ sudo apt-get update
 cat << "EOF"
 
 ###################################################
-
 Now, I install Docker
-
 ###################################################
 
 EOF
@@ -63,9 +63,7 @@ sudo docker version # Check Docker version
 cat << "EOF"
 
 ###################################################
-
 Tada! All fine. Welcome aboard, captain.
-
 ###################################################
 
 EOF
