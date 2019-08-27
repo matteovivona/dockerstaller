@@ -20,14 +20,14 @@ I have updated your system
 
 EOF
 
-sudo apt-get install \
+sudo apt-get -y install \
     apt-transport-https \
     ca-certificates \
     curl \
     gnupg-agent \
     software-properties-common \
     thin-provisioning-tools \
-    lvm2 -y
+    lvm2
     
 cat << "EOF"
     
