@@ -29,9 +29,13 @@ sudo apt-get install \
     thin-provisioning-tools \
     lvm2
     
+cat << "EOF"
+    
 ###################################################
 Adding the new repository
-###################################################    
+###################################################  
+
+EOF
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
@@ -57,6 +61,8 @@ sudo groupadd docker # Manage Docker as a non-root user
 sudo usermod -aG docker $USER 
 
 sudo systemctl enable docker
+
+sudo apt autoremove -y
 
 sudo docker version # Check Docker version
 
