@@ -27,7 +27,7 @@ sudo apt-get install \
     gnupg-agent \
     software-properties-common \
     thin-provisioning-tools \
-    lvm2
+    lvm2 -y
     
 cat << "EOF"
     
