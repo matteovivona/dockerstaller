@@ -46,6 +46,8 @@ sudo add-apt-repository \
 
 sudo apt-get update
 
+sudo apt-get remove docker docker-engine docker.io containerd runc -y
+
 cat << "EOF"
 
 ###################################################
