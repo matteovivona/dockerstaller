@@ -1,6 +1,6 @@
 # Dockerstaller ![Awesome](https://badgen.net/badge/icon/awesome?icon=awesome&label) ![terminal](https://badgen.net/badge/icon/terminal?icon=terminal&label) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
 
-An automagical script to install Docker CE on Ubuntu Cosmic 18.10, Bionic 18.04 (LTS) and Xenial 16.04 (LTS).
+An automagical script to install Docker CE on Ubuntu Bionic 18.04 (LTS) and Xenial 16.04 (LTS).
 
 ## Usage
 Open a terminal and SSH into the VM where you want to run Docker.
