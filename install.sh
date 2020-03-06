@@ -1,7 +1,6 @@
 #!/bin/bash
 
-cat << "EOF"
-
+cat << EOF
     ____             __                  __        ____         
    / __ \____  _____/ /_____  __________/ /_____ _/ / /__  _____
   / / / / __ \/ ___/ //_/ _ \/ ___/ ___/ __/ __ `/ / / _ \/ ___/
@@ -15,13 +14,14 @@ if [ -x "$(command -v docker)" ]; then
     sudo docker version
 else
     sudo apt-get update && sudo apt-get upgrade -y
-    cat << "EOF"
-    
+    cat << EOF
+
     ###################################################
     I have updated your system
     ###################################################
     
     EOF
+
     sudo apt-get -y install \
         apt-transport-https \
         ca-certificates \
@@ -30,13 +30,15 @@ else
         software-properties-common \
         thin-provisioning-tools \
         lvm2
-    cat << "EOF"
+
+    cat << EOF
 
     ###################################################
     Adding the new repository
     ###################################################  
 
     EOF
+
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     sudo add-apt-repository \
        "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
@@ -44,13 +46,14 @@ else
        stable"
     sudo apt-get update
     sudo apt-get remove docker docker-engine docker.io containerd runc -y
-    cat << "EOF"
+    cat << EOF
 
     ###################################################
     Now, I install Docker and docker-compose
     ###################################################
 
     EOF
+
     sudo apt-get install docker-ce docker-ce-cli containerd.io -y # Install Docker CE Stable
     sudo groupadd docker # Manage Docker as a non-root user
     sudo usermod -aG docker $USER 
@@ -59,11 +62,12 @@ else
     sudo sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     sudo chmod +x /usr/local/bin/docker-compose
     sudo docker version # Check Docker version
-    cat << "EOF"
+    cat << EOF
 
     ###################################################
     Tada! All fine. Welcome aboard, captain.
     ###################################################
-
+    
     EOF
+
 fi
