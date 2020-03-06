@@ -10,72 +10,79 @@ cat << "EOF"
                                                                 
 EOF
 
-sudo apt-get update && sudo apt-get upgrade -y
+if [ -x "$(command -v docker)" ]; then
+    echo "Docker is already installed"
+    sudo docker version
+else
 
-cat << "EOF"
-
-###################################################
-I have updated your system
-###################################################
-
-EOF
-
-sudo apt-get -y install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common \
-    thin-provisioning-tools \
-    lvm2
+    sudo apt-get update && sudo apt-get upgrade -y
     
-cat << "EOF"
+    cat << "EOF"
     
-###################################################
-Adding the new repository
-###################################################  
+    ###################################################
+    I have updated your system
+    ###################################################
+    
+    EOF
 
-EOF
+    sudo apt-get -y install \
+        apt-transport-https \
+        ca-certificates \
+        curl \
+        gnupg-agent \
+        software-properties-common \
+        thin-provisioning-tools \
+        lvm2
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    cat << "EOF"
 
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+    ###################################################
+    Adding the new repository
+    ###################################################  
 
-sudo apt-get update
+    EOF
 
-sudo apt-get remove docker docker-engine docker.io containerd runc -y
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-cat << "EOF"
+    sudo add-apt-repository \
+       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+       $(lsb_release -cs) \
+       stable"
 
-###################################################
-Now, I install Docker
-###################################################
+    sudo apt-get update
 
-EOF
+    sudo apt-get remove docker docker-engine docker.io containerd runc -y
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io -y # Install Docker CE Stable
+    cat << "EOF"
 
-sudo groupadd docker # Manage Docker as a non-root user
+    ###################################################
+    Now, I install Docker
+    ###################################################
 
-sudo usermod -aG docker $USER 
+    EOF
 
-sudo systemctl enable docker
+    sudo apt-get install docker-ce docker-ce-cli containerd.io -y # Install Docker CE Stable
 
-sudo apt autoremove -y
+    sudo groupadd docker # Manage Docker as a non-root user
 
-sudo sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo usermod -aG docker $USER 
 
-sudo chmod +x /usr/local/bin/docker-compose
+    sudo systemctl enable docker
 
-sudo docker version # Check Docker version
+    sudo apt autoremove -y
 
-cat << "EOF"
+    sudo sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-###################################################
-Tada! All fine. Welcome aboard, captain.
-###################################################
+    sudo chmod +x /usr/local/bin/docker-compose
 
-EOF
+    sudo docker version # Check Docker version
+
+    cat << "EOF"
+
+    ###################################################
+    Tada! All fine. Welcome aboard, captain.
+    ###################################################
+
+    EOF
+    
+fi
