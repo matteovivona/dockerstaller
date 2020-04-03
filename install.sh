@@ -10,11 +10,11 @@ cat <<"EOF"
 EOF
 
 if [ -x "$(command -v docker)" ]; then
-  echo -e "Docker is already installed! \e[32mGreen\e[0m"
+  echo -e "\e[32mDocker is already installed!\e[0m"
   sudo docker version
 else
   sudo apt-get update && sudo apt-get upgrade -y
-  echo -e "I have updated your system \e[32mGreen\e[0m"
+  echo -e "\e[32mI have updated your system \e[0m"
   sudo apt-get -y install \
     apt-transport-https \
     ca-certificates \
@@ -23,7 +23,7 @@ else
     software-properties-common \
     thin-provisioning-tools \
     lvm2
-  echo -e "Adding the new repository \e[32mGreen\e[0m"
+  echo -e "\e[32mAdding the new repository \e[0m"
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
   sudo add-apt-repository \
     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
@@ -31,7 +31,7 @@ else
       stable"
   sudo apt-get update
   sudo apt-get remove docker docker-engine docker.io containerd runc -y
-  echo -e "Now, I install Docker and docker-compose \e[32mGreen\e[0m"
+  echo -e "\e[32mNow, I install Docker and docker-compose \e[0m"
   sudo apt-get install docker-ce docker-ce-cli containerd.io -y # Install Docker CE Stable
   sudo groupadd docker                                          # Manage Docker as a non-root user
   sudo usermod -aG docker $USER
@@ -40,5 +40,5 @@ else
   sudo sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
   sudo docker version # Check Docker version
-  echo -e "Tada! All fine. Welcome aboard, captain. \e[32mGreen\e[0m"
+  echo -e "\e[32mTada! All fine. Welcome aboard, captain. \e[0m"
 fi
