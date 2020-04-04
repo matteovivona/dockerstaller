@@ -22,6 +22,7 @@ else
     gnupg-agent \
     software-properties-common \
     thin-provisioning-tools \
+    build-essential \
     lvm2
   echo -e "\e[32mAdding the new repository \e[0m"
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
