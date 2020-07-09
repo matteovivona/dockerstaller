@@ -13,7 +13,7 @@ if [ -x "$(command -v docker)" ]; then
   echo -e "\e[32mDocker is already installed!\e[0m"
   sudo docker version
 else
-  sudo apt-get update && sudo apt-get upgrade -y
+  sudo apt-get -qq update && sudo apt-get -qq upgrade -y
   echo -e "\e[32mI have updated your system \e[0m"
   sudo apt-get -y install \
     apt-transport-https \
@@ -30,14 +30,14 @@ else
     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
       $(lsb_release -cs) \
       stable"
-  sudo apt-get update
-  sudo apt-get remove docker docker-engine docker.io containerd runc -y
+  sudo apt-get -qq update
+  sudo apt-get -qq remove docker docker-engine docker.io containerd runc -y
   echo -e "\e[32mNow, I install Docker and docker-compose \e[0m"
   sudo apt-get install docker-ce docker-ce-cli containerd.io -y # Install Docker CE Stable
   sudo groupadd docker                                          # Manage Docker as a non-root user
   sudo usermod -aG docker $USER
   sudo systemctl enable docker
-  sudo apt autoremove -y
+  sudo apt -qq autoremove -y
   sudo sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
   sudo docker version # Check Docker version
