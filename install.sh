@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euoC pipefail
 
 cat <<"EOF"
     ____             __                  __        ____         
