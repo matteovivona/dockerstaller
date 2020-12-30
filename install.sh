@@ -33,14 +33,13 @@ else
       stable"
   sudo apt-get -qq update
   sudo apt-get -qq remove docker docker-engine docker.io containerd runc -y
-  echo -e "\e[32mNow, I install Docker and docker-compose \e[0m"
-  sudo apt-get install docker-ce docker-ce-cli containerd.io -y # Install Docker CE Stable
-  sudo groupadd docker                                          # Manage Docker as a non-root user
+  echo -e "\e[32mNow, I install Docker CE Stable and Docker Compose \e[0m"
+  sudo apt-get install docker-ce docker-ce-cli containerd.io -y
   sudo usermod -aG docker $USER
   sudo systemctl enable docker
   sudo apt -qq autoremove -y
   sudo sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
-  sudo docker version # Check Docker version
+  sudo docker version && sudo docker-compose version
   echo -e "\e[32mTada! All fine. Welcome aboard, captain. \e[0m"
 fi
